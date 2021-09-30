@@ -8,10 +8,10 @@
 
 int main(void)
 {
-	short int_type;
-	int long_int_type;
+	int int_type;
+	long int long_int_type;
 	float float_type;
-	long long_long_int_type;
+	long long int long_long_int_type;
 	char char_type;
 
 	/* sizeof evaluates the size of a variable */
