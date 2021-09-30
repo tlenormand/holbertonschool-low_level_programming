@@ -1,10 +1,17 @@
 #include <stdio.h>
 
-int main(void){
+/**
+ * main - Print a comment without usin prinf ans puts
+ *
+ * Return: 1 for the exercice
+ */
 
-	char *s="and that piece of art is useful\" - Dora Korpar, 2015-10-19\n" ;
+int main(void)
+{
 
-	while (*s) putchar(*s++);
+char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	return(0);
+while (*s) putchar (*s++);
+
+	return (1);
 }
