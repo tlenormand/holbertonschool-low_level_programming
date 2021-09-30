@@ -1,10 +1,12 @@
 #include <stdio.h>
-
-/* Print the first comment in c */
-
+/**
+ * main - Print the first comment in c without using printf
+ *
+ * Return: 0 always for main
+ */
+i
 int main(void)
 
-	/* Print without use printf */
 {
 
 char str[] = "\"Programming is like building a multilingual puzzle";
