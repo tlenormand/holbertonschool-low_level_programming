@@ -1,10 +1,11 @@
 #include <stdio.h>
+
 /**
  * main - Print the first comment in c without using printf
  *
  * Return: 0 always for main
  */
-i
+
 int main(void)
 
 {
