@@ -9,9 +9,13 @@
 int main(void)
 {
 
-int m, c, d, u;
-m = c = d = u = 48;
+int m = 48;
+int c = 48;
+int d = 48;
+int u = 48;
+
 u = 49;
+
 while (m < 58)
 {
 	while (c < 58)
@@ -34,18 +38,20 @@ while (m < 58)
 					putchar(44);
 					putchar(32);
 				}
-				u++;
+			u++;
 			}
 			u = 48;
 			d++;
 		}
 		d = m;
-		u = c + 2;
+		u = c+2;
 		c++;
-	}
+    }
 	c = 48;
 	m++;
 }
+
 putchar('\n');
+
 return (0);
 }
