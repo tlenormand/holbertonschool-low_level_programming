@@ -16,9 +16,11 @@ while (i < 58)
 	putchar(i);
 	i++;
 	if (i < 58)
+	{
 		putchar(44);
-	putchar(32);
-	
+		putchar(32);
+	}
+
 }
 
 putchar('\n');
