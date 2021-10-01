@@ -9,11 +9,15 @@
 int main(void)
 {
 
-int i;
+int i = 48;
 
-for (i = 0 ; i < 10 ; i++)
-printf("%d", i);
-printf("\n");
+while (i < 58)
+{
+	putchar(i);
+	i++;
+}
+
+putchar('\n');
 
 return (0);
 }

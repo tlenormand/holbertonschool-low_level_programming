@@ -9,8 +9,15 @@
 int main(void)
 {
 
-char str[] = "zyxwvutsrqponmlkjihgfedcba";
-	puts(str);
+int i = 57;
+
+while (i > 47)
+{
+	putchar(i);
+	i--;
+}
+
+putchar('\n');
 
 return (0);
 }
