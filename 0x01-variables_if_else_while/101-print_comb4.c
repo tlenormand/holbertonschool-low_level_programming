@@ -9,47 +9,37 @@
 int main(void)
 {
 
-int m = 48;
 int c = 48;
-int d = 48;
-int u = 48;
+int d = 49;
+int u = 50;
 
-u = 49;
-
-while (m < 58)
-{
 	while (c < 58)
 	{
 		while (d < 58)
 		{
 			while (u < 58)
 			{
-				putchar(m);
-				putchar(c);
-				putchar(32);
-				putchar(d);
-				putchar(u);
-				if (m == 57 && c == 56 && d == 57 && u == 57)
+
+				if (c == d || d == u || u == c)
 				{
 
 				}
 				else
 				{
+                    putchar(c);
+				    putchar(d);
+				    putchar(u);
 					putchar(44);
 					putchar(32);
 				}
-			u++;
+                u++;
 			}
-			u = 48;
-			d++;
+            u = d + 1;
+            d++;
 		}
-		d = m;
-		u = c+2;
-		c++;
+        d = c + 1;
+        c++;
     }
-	c = 48;
-	m++;
-}
 
 putchar('\n');
 
