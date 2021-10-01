@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - write digit number
- * write all single digit numbers of base 10 starting from 0, using putchar
+ * main -  prints all possible different combinations of three digits.
+ *
  * Return: 0 always
  */
 

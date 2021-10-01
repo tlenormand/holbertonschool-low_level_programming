@@ -4,8 +4,8 @@
 /* more headers goes there */
 
 /**
- * main - describe the n, random number
- * Return if positive, negative, or 0 value
+ * main - print whether the number in the variable n is positive or negative.
+ *
  * Return: 0 always
  */
 

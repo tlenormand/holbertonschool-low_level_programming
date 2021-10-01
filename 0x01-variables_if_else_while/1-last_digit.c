@@ -4,8 +4,8 @@
 /* more headers goes there */
 
 /**
- * main - describe the n, random number
- * Return the last digit
+ * main - print the last digit of the number stored in the variable n.
+ *
  * Return: 0 always
  */
 
