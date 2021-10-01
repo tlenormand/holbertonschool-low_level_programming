@@ -1,51 +1,34 @@
 #include <stdio.h>
 
 /**
- * main - write digit number
- * write all single digit numbers of base 10 starting from 0, using putchar
+ * main - prints all possible different combinations of 3 digits.
+ *
  * Return: 0 always
  */
 
 int main(void)
 {
+	int num1, num2;
 
-int m, c, d, u;
-m = c = d = u = 48;
-u = 49;
-while (m < 58)
-{
-	while (c < 58)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		while (d < 58)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			while (u < 58)
-			{
-				putchar(m);
-				putchar(c);
-				putchar(32);
-				putchar(d);
-				putchar(u);
-				if (m == 57 && c == 56 && d == 57 && u == 57)
-				{
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar('32');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
 
-				}
-				else
-				{
-					putchar(44);
-					putchar(32);
-				}
-				u++;
-			}
-			u = 48;
-			d++;
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(44);
+			putchar(32);
 		}
-		d = m;
-		u = c + 2;
-		c++;
 	}
-	c = 48;
-	m++;
-}
-putchar('\n');
-return (0);
+
+	putchar('\n');
+
+	return (0);
 }
