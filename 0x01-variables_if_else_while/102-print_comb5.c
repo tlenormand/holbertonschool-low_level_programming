@@ -14,6 +14,8 @@ int c = 48;
 int d = 48;
 int u = 48;
 
+u = 49;
+
 while (m < 58)
 {
     while (c < 58)
