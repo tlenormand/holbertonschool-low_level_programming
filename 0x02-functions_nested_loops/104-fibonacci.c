@@ -22,6 +22,9 @@ while (i < 98)
 	printf("%lu, ", c);
 	i++;
 }
+fib2 = fib1;
+fib1 = c;
+c = fib1 + fib2;
 printf("%lu\n", c);
 
 return (0);
