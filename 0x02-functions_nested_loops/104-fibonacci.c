@@ -29,7 +29,7 @@ while (i < 98)
 fib2 = fib1;
 fib1 = c;
 c = fib1 + fib2;
-printf(", %lu", c / 100000000000000);
+printf(", %lu", c / 10000000000000000);
 
 printf("\n");
 return (0);
