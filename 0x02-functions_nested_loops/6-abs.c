@@ -11,7 +11,9 @@
 
 int _abs(int n)
 {
-int const mask = n >> (sizeof(int) * CHARBIT - 1);
 
-return ((n + mask) ^ mask);
+if (n < 0)
+	n = n * -1;
+
+return (n);
 }
