@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * times_table - xxx
+ * print_times_table - xxx
  *
- * Return: xxx
+ * @n: number of table print
  */
 
 void print_times_table(int n)
@@ -30,17 +30,14 @@ if (n < 15 && n > 0)
 				_putchar(((c / 10) % 10) + '0');
 			else
 			{
-				if (j !=0)
+				if (j != 0)
 					_putchar(' ');
 			}
-			
+
 			_putchar(c % 10 + '0');
 
 			if (j != n)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+				_putchar(','), _putchar(' ');
 
 			j++;
 		}
@@ -50,4 +47,6 @@ if (n < 15 && n > 0)
 		i++;
 	}
 }
+if (n == 0)
+	_putchar('0'), _putchar('\n');
 }
