@@ -13,7 +13,7 @@ int i = 1;
 unsigned long int fib1 = 0;
 unsigned long int fib2 = 1;
 unsigned long int c = 1;
-unsigned long int cpt = 1;
+unsigned long int cpt = 0;
 
 while (i <= 100)
 {
