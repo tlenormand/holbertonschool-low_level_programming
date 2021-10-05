@@ -4,9 +4,9 @@
 /**
  * _abs - computes the absolute value of an integer
  *
- * @n: varaible test
+ * @n: varaible number
  *
- * Return: absolute value of an integer
+ * Return: absolute value of the number n
  */
 
 int _abs(int n)
