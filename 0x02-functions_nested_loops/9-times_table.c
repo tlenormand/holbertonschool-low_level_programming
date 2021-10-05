@@ -1,0 +1,47 @@
+#include "main.h"
+
+/**
+ * times_table - xxx
+ *
+ * Return: xxx
+ */
+
+void times_table(void)
+{
+int i = 0;
+int j = 0;
+int c = 0;
+
+while (j < 10)
+{
+	while (i < 10)
+	{
+		c = j * i;
+		if (c > 9)
+		{
+			_putchar((c / 10) + '0');
+			_putchar((c % 10) + '0');
+			if (i != 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
+		else
+		{
+			_putchar(c + '0');
+			if (i != 9)
+			{
+			_putchar(',');
+			_putchar(' ');
+			_putchar(' ');
+			}
+		}	
+		i++;
+	}
+	_putchar('\n');
+	i = 0;
+	j++;
+}
+
+}
