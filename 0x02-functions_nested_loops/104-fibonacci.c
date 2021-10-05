@@ -16,10 +16,10 @@ unsigned long int c = 1;
 
 while (i < 98)
 {
-	printf("%lu, ", c);
 	fib2 = fib1;
 	fib1 = c;
 	c = fib1 + fib2;
+	printf("%lu, ", c);
 	i++;
 }
 printf("%lu\n", c);
