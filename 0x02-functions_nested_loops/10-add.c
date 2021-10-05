@@ -3,6 +3,9 @@
 /**
  * add - xxx
  *
+ * @a: first number
+ * @b: second number
+ *
  * Return: xxx
  */
 
@@ -12,5 +15,5 @@ int c;
 
 c = a + b;
 
-return(c);
+return (c);
 }
