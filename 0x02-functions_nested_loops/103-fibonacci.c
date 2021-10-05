@@ -9,25 +9,23 @@
 int main(void)
 {
 
-int i = 3;
-unsigned long int fib1 = 1;
-unsigned long int fib2 = 2;
-unsigned long int c = 3;
+int i = 1;
+unsigned long int fib1 = 0;
+unsigned long int fib2 = 1;
+unsigned long int c = 1;
+unsigned long int cpt = 1;
 
-while (i <= 4000000)
+while (i <= 100)
 {
-	if (i % 2 == 0)
-    {
-    c = fib1 + fib2;
-	fib1 = fib2;
-	fib2 = c;
-	printf("%lu", c);
-	if (i != 4000000)
-		printf(", ");
-    }
-    i++;
+	fib2 = fib1;
+	fib1 = c;
+	c = fib1 + fib2;
+	if (c % 2 == 0)
+		if (cpt < 4000000)
+			cpt += c;
+	i++;
 }
-printf("\n");
+printf("%lu\n", cpt);
 
 	return (0);
 }
