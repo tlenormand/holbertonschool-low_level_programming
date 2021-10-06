@@ -10,22 +10,50 @@ int main(void)
 {
 
 int i = 0;
-unsigned long int fib1 = 1;
-unsigned long int fib2 = 2;
-unsigned long int c = 1;
+unsigned long int fib1 = 0;
+unsigned long int fib2 = 1;
+unsigned long int c = 0;
 
-while (i < 98)
+unsigned long int fib1_1, fib1_2, fib2_1, fib2_2, long_a, long_b;
+
+while (i < 92)
 {
-	if (i == 0)
-		printf("%lu", c);
-	else
-		printf(", %lu", c);
-	fib2 = fib1;
-	fib1 = c;
 	c = fib1 + fib2;
+	printf("%lu, ", c);
+	fib1 = fib2;
+	fib2 = c;
 	i++;
 }
 
-printf(", ...\n");
+fib1_1 = fib1 / 10000000000;
+fib1_2 = fib2 / 10000000000;
+fib2_1 = fib1 % 10000000000;
+fib2_2 = fib2 % 10000000000;
+
+printf(", ");
+i = 92;
+
+while (i < 98)
+{
+	long_a = fib1_1 + fib1_2;
+	long_b = fib2_1 + fib2_2;
+	if (fib2_1 + fib2_2 > 9999999999)
+	{
+		long_a += 1;
+		long_b %= 10000000000;
+	}
+	printf("%lu%lu", long_a, long_b);
+	if (i != 97)
+	{
+			printf(", ");
+	}
+	fib1_1 = fib1_2;
+	fib2_1 = fib2_2;
+	fib1_2 = long_a;
+	fib2_2 = long_b;
+	i++;
+}
+
+printf("\n");
 return (0);
 }
