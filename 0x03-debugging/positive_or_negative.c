@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 /**
- * positive_or_negative - print whether the number in the variable n is positive or negative.
+ * positive_or_negative - variable n is positive or negative.
+ *
+ * @n: number
  *
  * Return: 0 always
  */
