@@ -25,10 +25,8 @@ while (i < 92)
 	i++;
 }
 
-fib1_1 = fib1 / 10000000000;
-fib1_2 = fib2 / 10000000000;
-fib2_1 = fib1 % 10000000000;
-fib2_2 = fib2 % 10000000000;
+fib1_1 = fib1 / 10000000000, fib1_2 = fib2 / 10000000000;
+fib2_1 = fib1 % 10000000000, fib2_2 = fib2 % 10000000000;
 
 i = 92;
 
@@ -43,13 +41,8 @@ while (i < 98)
 	}
 	printf("%lu%lu", long_a, long_b);
 	if (i != 97)
-	{
-			printf(", ");
-	}
-	fib1_1 = fib1_2;
-	fib2_1 = fib2_2;
-	fib1_2 = long_a;
-	fib2_2 = long_b;
+		printf(", ");
+	fib1_1 = fib1_2, fib2_1 = fib2_2, fib1_2 = long_a, fib2_2 = long_b;
 	i++;
 }
 
