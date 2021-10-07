@@ -8,9 +8,9 @@
 void print_number(int n)
 {
 
-	int i = 0;
-	int number_in_n;
-	int j = 1;
+	unsigned int i = 0;
+	unsigned int number_in_n;
+	unsigned int j = 1;
 
 	if (n == 0)
 		_putchar('0');
