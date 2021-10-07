@@ -16,7 +16,7 @@ if (size > 0)
 {
 	while (i <= size)
 	{
-		j = 0;
+		j = 1;
 		while (j <= size - i)
 		{
 			_putchar(' ');
