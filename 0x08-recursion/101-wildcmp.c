@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * wildcmp - function that compares two strings
@@ -27,6 +28,7 @@ int wildcmp(char *s1, char *s2)
 
 int compare(char *s1, char *s2, int i, int j, int istar)
 {
+	printf("\ns1: %c, i: %d, s2: %c, j: %d, istar: %d", s1[i], i, s2[j], j, istar);
 	if (s1[i] != '\0')
 	{
 		if (s1[i] == s2[j])
@@ -37,7 +39,7 @@ int compare(char *s1, char *s2, int i, int j, int istar)
 		else if (s2[j] == '*' && s2[j - 1] != '*')
 		{
 			istar = 1;
-			return (compare(s1, s2, i + 1, j + 1, istar));
+			return (compare(s1, s2, i + 2, j + 1, istar));
 		}
 		else if (s2[j] == '*')
 		{
