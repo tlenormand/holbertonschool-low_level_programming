@@ -31,21 +31,23 @@ int compare(char *s1, char *s2, int i, int j, int istar)
 	/*printf("\ns1: %c, i: %d, s2: %c, j: %d, istar: %d", s1[i], i, s2[j], j, istar);*/
 	if (s1[i] != '\0')
 	{
-		if (s1[i] == s2[j])
+		if (s2[j - 1] == '*' && s1[i - 1] == s1[i])
+		{
+			return (compare(s1, s2, i + 1, j, istar));
+		}
+		
+
+		else if (s1[i] == s2[j])
 		{
 			istar = 0;
 			return (compare(s1, s2, i + 1, j + 1, istar));
 		}
-		else if (s2[j] == '*' && s2[j - 1] != '*' && s1[i + 1] != s1 [i + 2])
-		{
-			istar = 1;
-			return (compare(s1, s2, i + 2, j + 1, istar));
-		}
-				else if (s2[j] == '*' && s2[j - 1] != '*')
+		else if (s2[j] == '*' && s2[j - 1] != '*')
 		{
 			istar = 1;
 			return (compare(s1, s2, i + 1, j + 1, istar));
 		}
+
 		else if (s2[j] == '*')
 		{
 			istar = 1;
@@ -58,7 +60,7 @@ int compare(char *s1, char *s2, int i, int j, int istar)
 	}
 	else if ((s1[i] == '\0' && s2[j] == '*') && istar == 0)
 		return (compare(s1, s2, i, j + 1, istar));
-	else if ((s1[i] == '\0' && s2[j] != '\0') && istar == 0)
+	else if ((s1[i] == '\0' && s2[j] != '\0'))
 		return (0);
 	else if (s1[i] == '\0')
 		return (1);
