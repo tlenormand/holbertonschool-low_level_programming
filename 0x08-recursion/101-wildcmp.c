@@ -28,7 +28,7 @@ int wildcmp(char *s1, char *s2)
 
 int compare(char *s1, char *s2, int i, int j, int istar)
 {
-	printf("\ns1: %c, i: %d, s2: %c, j: %d, istar: %d", s1[i], i, s2[j], j, istar);
+	/*printf("\ns1: %c, i: %d, s2: %c, j: %d, istar: %d", s1[i], i, s2[j], j, istar);*/
 	if (s1[i] != '\0')
 	{
 		if (s1[i] == s2[j])
