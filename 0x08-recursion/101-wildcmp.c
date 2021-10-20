@@ -36,10 +36,15 @@ int compare(char *s1, char *s2, int i, int j, int istar)
 			istar = 0;
 			return (compare(s1, s2, i + 1, j + 1, istar));
 		}
-		else if (s2[j] == '*' && s2[j - 1] != '*')
+		else if (s2[j] == '*' && s2[j - 1] != '*' && s1[i + 1] != s1 [i + 2])
 		{
 			istar = 1;
 			return (compare(s1, s2, i + 2, j + 1, istar));
+		}
+				else if (s2[j] == '*' && s2[j - 1] != '*')
+		{
+			istar = 1;
+			return (compare(s1, s2, i + 1, j + 1, istar));
 		}
 		else if (s2[j] == '*')
 		{
