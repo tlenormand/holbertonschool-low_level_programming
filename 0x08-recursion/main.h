@@ -10,3 +10,8 @@ int is_prime_number(int n);
 int prime(int n, int i);
 int is_palindrome(char *s);
 int palindrome(char *s, int i, int j);
+int wildcmp(char *s1, char *s2);
+
+char reverse_string(char *s2, int reverse);
+int compare(char *s1, char *s2, int i, int j, int istar);
+int star(char *s1, char *s2, int i, int j);
