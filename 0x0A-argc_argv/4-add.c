@@ -5,7 +5,7 @@
  * main - program that adds positive numbers
  * @argc: number of arguments
  * @argv: value of arguments
- * Return: 0 or error if *argv[i] is not a number
+ * Return: 0 or 1 and error if *argv[i] is not a number
  */
 
 int main(int argc, char *argv[])
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		if (*argv[i] < 48 || *argv[i] > 57)
 		{
 			printf("Error\n");
-			return (0);
+			return (1);
 		}
 		sum += atoi(argv[i]);
 		i++;
