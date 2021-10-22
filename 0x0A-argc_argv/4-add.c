@@ -12,12 +12,6 @@ int main(int argc, char *argv[])
 {
 	int i = 1, sum = 0;
 
-	if (argc < 3)
-	{
-		printf("Error\n");
-		return (0);
-	}
-
 	while (i < argc)
 	{
 		if (*argv[i] < 48 || *argv[i] > 57)
