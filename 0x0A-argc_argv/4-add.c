@@ -10,17 +10,20 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 1, sum = 0;
+	int x = 1, y = 0, sum = 0;
 
-	while (i < argc)
+	while (x < argc)
 	{
-		if (*argv[i] < 48 || *argv[i] > 57)
+		for (y = 0; argv[x][y]; y++)
 		{
-			printf("Error\n");
-			return (1);
+			if (argv[x][y] < 48 || argv[x][y] > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		sum += atoi(argv[i]);
-		i++;
+		sum += atoi(argv[x]);
+		x++;
 	}
 
 	printf("%d\n", sum);
