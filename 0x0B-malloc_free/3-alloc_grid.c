@@ -30,6 +30,7 @@ int **alloc_grid(int width, int height)
 			for (wi = 0; wi < he; wi++)
 				free(list[wi]);
 			free(list);
+			return (NULL);
 		}
 	}
 
