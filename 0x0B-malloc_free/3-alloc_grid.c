@@ -27,10 +27,9 @@ int **alloc_grid(int width, int height)
 		list[he] = (int *)malloc(sizeof(int) * width);
 		if (list == NULL)
 		{
-			free_grid(list, height);
-			/*for (he = 0; he < height; he++)
+			for (he = 0; he < height; he++)
 				free(list[he]);
-			free(list);*/
+			free(list);
 			return (NULL);
 		}
 	}
@@ -40,21 +39,4 @@ int **alloc_grid(int width, int height)
 			list[he][wi] = 0;
 
 	return (list);
-}
-
-
-/**
- * free_grid - function that frees a 2 dimensional grid
- * @grid: grid to free
- * @height: size of the height
- */
-
-void free_grid(int **grid, int height)
-{
-	while (height > 0)
-	{
-		free(grid[height - 1]);
-		height--;
-	}
-	free(grid);
 }
