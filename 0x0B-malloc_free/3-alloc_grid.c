@@ -27,7 +27,7 @@ int **alloc_grid(int width, int height)
 		list[he] = (int *)malloc(sizeof(int) * width);
 		if (list == NULL)
 		{
-			while (height > 0)
+			while (height >= 0)
 			{
 				free(list[height - 1]);
 				height--;
