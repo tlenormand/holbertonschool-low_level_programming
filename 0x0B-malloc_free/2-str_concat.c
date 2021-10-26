@@ -13,7 +13,7 @@ char *str_concat(char *s1, char *s2)
 	int i;
 	char *list = NULL;
 
-	list = malloc(sizeof(int) * (_strlen(s1) + _strlen(s2)));
+	list = (char *)malloc(sizeof(int) * (_strlen(s1) + _strlen(s2)));
 	if (list == NULL)
 		return (0);
 

@@ -14,11 +14,11 @@ char *_strdup(char *str)
 	char *list = NULL;
 
 	if (str == 0)
-		return (0);
+		return (NULL);
 
-	list = malloc(sizeof(int) * _strlen(str));
+	list = (int *)malloc(sizeof(int) * _strlen(str));
 	if (list == NULL)
-		return (0);
+		return (NULL);
 
 	for (i = 0; i < _strlen(str); i++)
 		*(list + i) = *(str + i);
