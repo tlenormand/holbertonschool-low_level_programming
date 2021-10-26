@@ -10,20 +10,23 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int i;
+	int i, strlen_s1, strlen_s2;
 	char *list = NULL;
 
-	list = (char *)malloc(sizeof(int) * (_strlen(s1) + _strlen(s2)));
-	if (list == NULL)
-		return (0);
+	strlen_s1 = s1 == NULL ? 0 : _strlen(s1);
+	strlen_s2 = s2 == NULL ? 0 : _strlen(s2);
 
-	for (i = 0; i < _strlen(s1); i++)
+	list = (char *)malloc(sizeof(char) * (strlen_s1 + strlen_s2));
+	if (list == NULL)
+		return (NULL);
+
+	for (i = 0; i < strlen_s1; i++)
 	{
 		*(list + i) = *(s1 + i);
 	}
 
-	for (i = 0; i < (_strlen(s2)); i++)
-		*(list + _strlen(s1) + i) = *(s2 + i);
+	for (i = 0; i < strlen_s2; i++)
+		*(list + strlen_s1 + i) = *(s2 + i);
 
 	return (list);
 }
