@@ -16,7 +16,7 @@ char *_strdup(char *str)
 	if (str == 0)
 		return (NULL);
 
-	list = (int *)malloc(sizeof(int) * _strlen(str));
+	list = (char *)malloc(sizeof(int) * _strlen(str));
 	if (list == NULL)
 		return (NULL);
 
