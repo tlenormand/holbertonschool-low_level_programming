@@ -22,6 +22,8 @@ char **strtow(char *str)
 			row++, i += nb_letter(i, str);
 		else
 			i++;
+	if (row == 0)
+		return (NULL);
 
 /*assign the size "row" for the array "list"*/
 	list = (char **)malloc((sizeof(char *) * row + 1));
