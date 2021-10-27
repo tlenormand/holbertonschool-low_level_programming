@@ -1,39 +1,29 @@
 #include <stdlib.h>
 #include "main.h"
-#include <stdio.h>
 
 /**
- * strtow - xxx
- * @str: xxx
- * Return: xxx
+ * strtow - function that splits a string into words
+ * @str: string
+ * Return: array of string
  */
 
 char **strtow(char *str)
 {
 	char **list = NULL;
-	int i = 0, list_index = 0, len = 0, row = 0;
+	int i = 0, index = 0, lenght = 0, row = 0;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
-/*count the words of the array "str" to assign in row in "list"*/
-	while (str[i])
-		if (str[i] != ' ')
-			row++, i += nb_letter(i, str);
-		else
-			i++;
-	if (row == 0)
-		return (NULL);
-
-/*assign the size "row" for the array "list"*/
-	list = (char **)malloc((sizeof(char *) * row + 1));
-	if (list == NULL)
+	row = nb_word(i, str);
+	list = (char **)malloc((sizeof(char *) * nb_word(i, str) + 1));
+	if (list == NULL || row == 0)
 	{
 		free(list);
 		return (NULL);
 	}
 
-	i = 0, len = 0, row = 0;
+	row = 0;
 	while (str[i])
 	{
 		if (str[i] != ' ')
@@ -41,16 +31,16 @@ char **strtow(char *str)
 			list[row] = (char *)malloc((2 + nb_letter(i, str) * sizeof(char)));
 			if (list[row] == NULL)
 			{
-				for (list_index = 0; list_index <= row; list_index++)
-					free(list[list_index]);
+				for (index = 0; index <= row; index++)
+					free(list[index]);
 				free(list);
 				return (NULL);
 			}
-			len = 0;
-			for (list_index = i; str[list_index] != ' ' && str[list_index]; list_index++)
+			lenght = 0;
+			for (index = i; str[index] != ' ' && str[index]; index++)
 			{
-				list[row][len] = str[list_index];
-				len++, i++;
+				list[row][lenght] = str[index];
+				lenght++, i++;
 			}
 			row++;
 		}
@@ -77,4 +67,25 @@ int nb_letter(int i, char *str)
 		letter++, i++;
 
 	return (letter);
+}
+
+
+/**
+ * nb_word - count the number of words in str
+ * @i: index of str
+ * @str: string
+ * Return: the number of words
+ */
+
+int nb_word(int i, char *str)
+{
+	int row = 0;
+
+	while (str[i])
+		if (str[i] != ' ')
+			row++, i += nb_letter(i, str);
+		else
+			i++;
+
+	return (row);
 }
