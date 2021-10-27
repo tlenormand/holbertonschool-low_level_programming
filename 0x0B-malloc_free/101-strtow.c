@@ -26,7 +26,7 @@ char **strtow(char *str)
 		return (NULL);
 
 /*assign the size "row" for the array "list"*/
-	list = (char **)malloc((sizeof(char *) * row + 1));
+	list = (char **)malloc((sizeof(char *) * row + 2));
 	if (list == NULL)
 	{
 		free(list);
