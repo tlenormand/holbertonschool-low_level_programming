@@ -10,3 +10,4 @@ char *argstostr(int ac, char **av);
 
 int len_argv(int argc, char *argv[]);
 char **strtow(char *str);
+int nb_letter(int i, char *str);
