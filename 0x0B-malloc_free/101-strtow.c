@@ -26,7 +26,7 @@ char **strtow(char *str)
 		return (NULL);
 
 /*assign the size "row" for the array "list"*/
-	list = (char **)malloc((sizeof(char *) * row + 2));
+	list = (char **)malloc((sizeof(char *) * row + 1));
 	if (list == NULL)
 	{
 		free(list);
@@ -38,7 +38,7 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ')
 		{
-			list[row] = (char *)malloc((1 + nb_letter(i, str) * sizeof(char)));
+			list[row] = (char *)malloc((2 + nb_letter(i, str) * sizeof(char)));
 			if (list[row] == NULL)
 			{
 				for (list_index = 0; list_index <= row; list_index++)
