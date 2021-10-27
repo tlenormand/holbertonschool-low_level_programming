@@ -9,3 +9,4 @@ void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
 
 int len_argv(int argc, char *argv[]);
+char **strtow(char *str);
