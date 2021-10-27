@@ -44,7 +44,6 @@ char **strtow(char *str)
 		/*the lenght of the word then reset the lenght*/
 		else if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0')
 		{
-			printf("i %d, len %d\n", i, len);
 			list[row] = (char *)malloc((1 + nb_letter(i + 1, str) * sizeof(char)));
 			if (list[row] == NULL)
 			{
