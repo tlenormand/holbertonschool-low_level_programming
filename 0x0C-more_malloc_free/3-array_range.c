@@ -11,20 +11,20 @@
 int *array_range(int min, int max)
 {
 	int *list = NULL;
-	int i, index = 0;
+	int i;
 
 	if (min > max)
 		return (NULL);
 
-	list = (int *)malloc(2 + (max - min) * (sizeof(int)));
+	list = (int *)malloc(1 + (max - min) * (sizeof(int)));
 	if (list == NULL)
 	{
 		free(list);
 		return (NULL);
 	}
 
-	for (i = min; i <= max; i++, index++)
-		list[index] = i;
+	for (i = 0; min <= max; i++)
+		list[i] = min++;
 
 	return (list);
 }
