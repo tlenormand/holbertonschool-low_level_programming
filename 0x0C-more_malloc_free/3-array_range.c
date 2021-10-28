@@ -11,14 +11,12 @@
 int *array_range(int min, int max)
 {
 	int *list = NULL;
-	int size, i, index = 0;
+	int i, index = 0;
 
 	if (min > max)
 		return (NULL);
 
-	size = max - min;
-
-	list = (int *)malloc(1 + size * (sizeof(int)));
+	list = (int *)malloc(2 + (max - min) * (sizeof(int)));
 	if (list == NULL)
 	{
 		free(list);
@@ -26,9 +24,7 @@ int *array_range(int min, int max)
 	}
 
 	for (i = min; i <= max; i++, index++)
-	{
 		list[index] = i;
-	}
 
 	return (list);
 }
