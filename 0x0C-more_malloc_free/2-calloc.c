@@ -12,10 +12,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i, *list = NULL;
 
-	if (nmemb < 1 || size < 1)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	list = (unsigned int *)malloc(1 + nmemb * (sizeof(unsigned int)));
+	list = (unsigned int *)malloc(1 + nmemb * size);
 	if (list == NULL)
 	{
 		free(list);
