@@ -18,7 +18,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	strlen_s2 = s2 == NULL ? 0 : _strlen(s2);
 	strlen_s2 = n >= strlen_s2 ? strlen_s2 : n;
 
-	list = (char *)malloc(sizeof(char) * (strlen_s1 + n) + 4);
+	list = (char *)malloc(sizeof(char) * strlen_s1 + n + 1);
 	if (list == NULL)
 	{
 		free(list);
