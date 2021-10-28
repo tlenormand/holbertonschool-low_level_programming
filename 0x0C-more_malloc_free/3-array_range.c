@@ -16,7 +16,7 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	list = (int *)malloc(1 + (max - min) * (sizeof(int)));
+	list = (int *)malloc((max - min + 1) * (sizeof(int)));
 	if (list == NULL)
 	{
 		free(list);
