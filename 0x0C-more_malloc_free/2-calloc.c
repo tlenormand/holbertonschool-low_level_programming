@@ -16,14 +16,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	list = (char *)malloc(1 + nmemb * size);
+	list = (char *)malloc(nmemb * size);
 	if (list == NULL)
 	{
 		free(list);
 		return (NULL);
 	}
 
-	for (i = 0; i <= nmemb; i++)
+	for (i = 0; i < nmemb * size; i++)
 		list[i] = 0;
 
 	return (list);
