@@ -10,19 +10,20 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i, *list = NULL;
+	unsigned int i;
+	char *list = NULL;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	list = (unsigned int *)malloc(1 + nmemb * size);
+	list = (char *)malloc(1 + nmemb * size);
 	if (list == NULL)
 	{
 		free(list);
 		return (NULL);
 	}
 
-	for (i = 0; i <= size; i++)
+	for (i = 0; i <= nmemb; i++)
 		list[i] = 0;
 
 	return (list);
