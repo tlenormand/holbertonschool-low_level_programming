@@ -10,14 +10,12 @@
 void print_buffer(char *b, int size)
 {
 	int i = 0, charactere;
-	int buffer = 0x000000;
 
 	while (i < size)
 	{
 		if (i % 10 == 0)
 		{
-			printf("%08x: ", buffer);
-			buffer += 10;
+			printf("%08x: ", i);
 			printf("%02x", b[i]);
 		}
 		i++;
@@ -36,7 +34,7 @@ void print_buffer(char *b, int size)
 
 		for (charactere = i - 10; charactere < i && i % 10 == 0; charactere++)
 		{
-			if (b[charactere] > 10)
+			if (b[charactere] > 31 && b[charactere] < 126)
 				printf("%c", b[charactere]);
 			else
 				printf(".");
