@@ -17,7 +17,7 @@ typedef struct dog
 
 
 /*functions created before*/
-
+int _strlen(char *s);
 
 /*prototypes for the exercices*/
 void init_dog(struct dog *d, char *name, float age, char *owner);
