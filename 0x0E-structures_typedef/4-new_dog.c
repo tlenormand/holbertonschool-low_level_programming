@@ -21,8 +21,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	(*my_dog).name = name;
+	if ((*my_dog).name == NULL)
+	{
+		free(my_dog->name);
+		return (NULL);
+	}
 	my_dog->age = age;
 	(*my_dog).owner = owner;
+	if ((*my_dog).owner == NULL)
+	{
+		free(my_dog->owner);
+		free(my_dog->name);
+		return (NULL);
+	}
 
 	return (my_dog);
 }
