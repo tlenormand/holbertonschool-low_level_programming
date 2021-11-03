@@ -1,29 +1,25 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "3-calc.h"
 
 /**
- * 
- * 
+ * main - program that performs simple operations
+ * @argc: number of arguments
+ * @argv: value to calculate
+ * Return: 0 always
  */
 
 int main(int argc, char *argv[])
 {
-	int num1, num2;
-	char *op;
-
-	if (argc > 5)
+	if (argc != 4)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
-	/*si argc ne correspond pas return error puis 98*/
-	/*si opérateur ne correspond pas return error puis 98*/
-	/*si divise ou modulo 0 error puis return 100*/
+	if ((argv[2][0] == '/' || argv[2][0] == '%') && atoi(argv[3]) == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-	op = argv[2];
-	printf("%d\n", get_op_func(op)(num1, num2));
+	printf("%d\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }

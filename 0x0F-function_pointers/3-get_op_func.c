@@ -1,12 +1,12 @@
-#include <stdio.h>
 #include "3-calc.h"
 
 /**
- * 
- * 
+ * get_op_func - get the operator of the calculation
+ * @s: operator income to compare
+ * Return: function associate to the operator
  */
 
-int (*get_op_func(char *s))(int num1, int num2)
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
@@ -17,18 +17,15 @@ int (*get_op_func(char *s))(int num1, int num2)
 		{NULL, NULL}
 	};
 
-	int i = 0, result = 0;
+	int i = 0;
 
-	while (*s && op_t ops[i])
+	while (ops[i].op != NULL)
 	{
-		if (ops[i] == s)
-		{
-			return (op_t->ops[i](num1, num2));
-		}
+		if (ops[i].op[0] == s[0])
+			return (ops[i].f);
 		i++;
 	}
 
 	printf("Error\n");
-	return (99);
+	exit(99);
 }
-
