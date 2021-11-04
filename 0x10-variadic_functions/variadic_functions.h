@@ -4,11 +4,19 @@
 #include <stdarg.h>
 #include <stddef.h>
 
+/**
+ * struct format - Struct format
+ * @formats: The format of the char
+ * @f: function assiciated
+ */
+
 typedef struct format
 {
-	char letter_format;
+	char formats;
+
 	void (*f)(void);
 } format_t;
+
 
 /*functions created before*/
 
