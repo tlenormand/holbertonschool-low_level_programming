@@ -9,7 +9,6 @@
 
 void print_all(const char * const format, ...)
 {
-	va_list args;
 	search_type_t format_of_char[] = {
 		{"c", print_char},
 		{"i", print_integer},
@@ -17,8 +16,8 @@ void print_all(const char * const format, ...)
 		{"s", print_char_pointer},
 		{NULL, NULL}
 	};
-
 	int index1 = 0, index2 = 0;
+	va_list args;
 
 	va_start(args, format);
 

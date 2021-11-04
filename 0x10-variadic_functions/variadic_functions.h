@@ -5,8 +5,8 @@
 #include <stddef.h>
 
 /**
- * struct format - Struct format
- * @formats: The format of the char
+ * struct search_type - struct format
+ * @type: the format of the char
  * @f: function assiciated
  */
 
