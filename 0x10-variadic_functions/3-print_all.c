@@ -17,6 +17,7 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 	int index1 = 0, index2 = 0;
+	char *separator = "";
 	va_list args;
 
 	va_start(args, format);
@@ -27,8 +28,8 @@ void print_all(const char * const format, ...)
 		{
 			if (format[index1] == *format_of_char[index2].type)
 			{
-				if (index1 != 0)
-					printf(", ");
+				printf("%s", separator);
+				separator = ", ";
 				format_of_char[index2].f(args);
 			}
 			index2++;
