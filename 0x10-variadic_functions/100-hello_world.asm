@@ -10,7 +10,7 @@ main:
 	mov rax, 1
 	mov rdi, 1
 	mov rsi, message
-	mov rdx, 11+1
+	mov rdx, 12+1
 	syscall
 
 	mov rax, 60
