@@ -86,7 +86,9 @@ void print_char_pointer(va_list args)
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", str);
+		return;
+	}
+	printf("%s", str);
 }
