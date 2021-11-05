@@ -26,9 +26,9 @@ int main(int argc, char **argv)
 
 	p = &main;
 
-	for (i = 4; i < atoi(argv[1]) + 4; i++)
+	for (i = 0; i < atoi(argv[1]); i++)
 	{
-		if (i != 4)
+		if (i != 0)
 			printf(" ");
 		printf("%02x", *(unsigned char *)(p + i));
 	}
