@@ -27,7 +27,11 @@ int main(int argc, char **argv)
 	p = &main;
 
 	for (i = 4; i < atoi(argv[1]) + 4; i++)
-		printf("%02x ", *((unsigned char *)(p + i)));
+	{
+		if (i != 4)
+			printf(" ");
+		printf("%02x", *(unsigned char *)(p + i));
+	}
 	printf("\n");
 
 	return (0);
