@@ -3,8 +3,9 @@
 #include "lists.h"
 
 /**
- * print_list - xxx
- * @h: xxx
+ * add_node - function that adds a new node at the beginning of a list_t list
+ * @head: address of the first node
+ * @str: new string to add in the list
  * Return: xxx
  */
 
