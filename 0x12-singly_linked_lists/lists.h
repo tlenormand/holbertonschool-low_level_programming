@@ -13,9 +13,9 @@
  */
 typedef struct list_s
 {
-    char *str;
-    unsigned int len;
-    struct list_s *next;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
 /*functions created before*/
@@ -30,6 +30,6 @@ list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
 
 /*function creates in exercices*/
-
+void beforeMain(void) __attribute__((constructor));
 
 #endif /* LIST_H */
