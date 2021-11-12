@@ -3,11 +3,18 @@
 
 #include <stddef.h>
 
+/**
+ * struct list - list structure
+ * @str: string
+ * @len: length of the string
+ * @next: pointer to the next list
+ */
+
 typedef struct list
 {
-    char *str;
-    int len;
-    void *next;
+	char *str;
+	int len;
+	void *next;
 } list_t;
 
 /*functions created before*/

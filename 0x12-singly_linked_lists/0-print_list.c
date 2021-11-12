@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /**
- * print_list - xxx
- * @h: xxx
- * Return: xxx
+ * print_list - function that prints all the elements of a list_t list
+ * @h: list address
+ * Return: number of elements
  */
 
 size_t print_list(const list_t *h)
