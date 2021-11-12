@@ -1,6 +1,6 @@
-#include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include <string.h>
+#include "lists.h"
 
 /**
  * print_list - xxx
@@ -10,38 +10,26 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-    list_t *new;
-    list_t hello = {*str, _strlen(str), NULL};
-    size_t n;
+	list_t *new;
 
-    head = &hello;
-    new = malloc(sizeof(list_t));
-    if (new == NULL)
-    {
-        printf("Error\n");
-        return (1);
-    }
-    new->str = str;
-    new->len = _strlen(str);
-    new->next = head;
-    head = new;
-    n = print_list(*head);
-    printf("-> %lu elements\n", n);
+	/**head = str;*/
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
+	{
+		return (NULL);
+	}
+	new->str = strdup(str);
+	new->len = _strlen(str);
+	new->next = *head;
+	*head = new;
 
-    printf("\n");
-    free(new->str);
-    new->str = NULL;
-    n = print_list(*head);
-    printf("-> %lu elements\n", n);
-
-    free(new);
-    return (0);
+	return (*head);
 }
 
 /**
-* _strlen - check the code
-* Return: Always 0.
-* @s: pointer
+* _strlen - check the length of the string
+* Return: length of the string
+* @s: string
 */
 
 int _strlen(const char *s)
@@ -50,7 +38,7 @@ int _strlen(const char *s)
 
 	for (i = 0 ; s[i] != '\0'; i++)
 	{
-        ;
+		;
 	}
 
 	return (i);
