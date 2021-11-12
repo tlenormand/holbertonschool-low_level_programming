@@ -11,34 +11,14 @@
 
 void free_list(list_t *head)
 {
-	list_t *list;
+	list_t *tmp;
 
-    list = *head;
-
-		while (list->next != NULL)
-        {
-            free(list->str);
-            list = list->next;
-            free(list->next);
-            free(list);
-        }
-    free(list);
-}
-
-/**
-* _strlen - check the length of the string
-* Return: length of the string
-* @s: string
-*/
-
-int _strlen(const char *s)
-{
-	int i;
-
-	for (i = 0 ; s[i] != '\0'; i++)
+	while (head != NULL)
 	{
-		;
+		tmp = head;
+		head = head->next;
+		free(head->str);
+		free(head->next);
+		free(tmp);
 	}
-
-	return (i);
 }
