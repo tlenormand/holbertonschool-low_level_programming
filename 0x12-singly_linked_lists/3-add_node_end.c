@@ -9,21 +9,28 @@
  * Return: xxx
  */
 
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new;
+	list_t *new_list, *old_list;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
-	{
+	new_list = malloc(sizeof(list_t));
+	if (new_list == NULL)
 		return (NULL);
-	}
-	new->str = strdup(str);
-	new->len = _strlen(str);
-	new->next = *head;
-	*head = new;
 
-	return (*head);
+	new_list->str = strdup(str);
+	new_list->len = _strlen(str);
+
+	if (*head == NULL)
+		*head = new_list;
+	else
+	{
+		old_list = *head;
+		while (old_list->next != NULL)
+			old_list = old_list->next;
+		old_list->next = new_list;
+	}
+
+	return (new_list);
 }
 
 /**
