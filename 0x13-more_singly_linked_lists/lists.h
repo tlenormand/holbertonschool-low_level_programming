@@ -34,8 +34,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
+size_t free_listint_safe(listint_t **h);
 
 /*function creates in exercices*/
-int detect_loop(const listint_t *head);
+int detect_loop(const listint_t *head, const listint_t *curr_node, int index);
 
 #endif /* LIST_H */

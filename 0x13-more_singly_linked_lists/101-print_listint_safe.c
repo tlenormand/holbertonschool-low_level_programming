@@ -11,17 +11,17 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
+	const listint_t *curr_node = head;
 	int number_of_nodes = 0;
 
-	while (head)
+	while (curr_node)
 	{
-		printf("[%p] %d\n", (void *)head, head->n);
+		printf("[%p] %d\n", (void *)curr_node, curr_node->n);
 		number_of_nodes++;
-		head = head->next;
-		if (detect_loop(head) == 1)
+		curr_node = curr_node->next;
+		if (detect_loop(head, curr_node, number_of_nodes) != 0)
 		{
-			head = head->next;
-			printf("-> [%p] %d\n", (void *)head, head->n);
+			printf("-> [%p] %d\n", (void *)curr_node, curr_node->n);
 			exit(98);
 		}
 	}
@@ -32,22 +32,18 @@ size_t print_listint_safe(const listint_t *head)
 /**
  * detect_loop - function that detect if a loop exist in a linked list
  * @head: list address
+ * @curr_node: current node to check if it doesn't already exist
+ * @index: number of incrementation we need to do before find curr_node
  * Return: 0 if no loop, 1 if loop find
  */
 
-int detect_loop(const listint_t *head)
+int detect_loop(const listint_t *head, const listint_t *curr_node, int index)
 {
-	listint_t *slow = (void *)head, *fast = (void *)head;
-
-	while (slow && fast && fast->next)
+	while (head != curr_node)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
-		if (fast == slow)
-		{
-			return (1);
-		}
+		head = head->next;
+		index--;
 	}
 
-	return (0);
+	return (index);
 }
