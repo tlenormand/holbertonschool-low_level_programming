@@ -16,6 +16,7 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+
 /*functions created before*/
 
 
@@ -32,8 +33,9 @@ int sum_listint(listint_t *head);
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
+size_t print_listint_safe(const listint_t *head);
 
 /*function creates in exercices*/
-
+int detect_loop(const listint_t *head);
 
 #endif /* LIST_H */
