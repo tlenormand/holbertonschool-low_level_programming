@@ -22,7 +22,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (detect_loop(head, curr_node, number_of_nodes) != 0)
 		{
 			printf("-> [%p] %d\n", (void *)curr_node, curr_node->n);
-			exit(98);
+			break;
 		}
 	}
 
@@ -34,7 +34,7 @@ size_t print_listint_safe(const listint_t *head)
  * @head: list address
  * @curr_node: current node to check if it doesn't already exist
  * @index: number of incrementation we need to do before find curr_node
- * Return: 0 if no loop, 1 if loop find
+ * Return: 0 if no loop, other if loop find
  */
 
 int detect_loop(const listint_t *head, const listint_t *curr_node, int index)
