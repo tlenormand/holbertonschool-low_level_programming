@@ -9,15 +9,19 @@
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
+	listint_t *browse = head;
 	unsigned int loop;
 
-	if (head == NULL)
+	if (browse == NULL)
 		return (NULL);
 
-	for (loop = 0; loop < index && head->next != NULL; loop++)
+	for (loop = 0; loop < index && browse; loop++)
 	{
-		head = head->next;
+		browse = browse->next;
 	}
 
-	return (head);
+	if (browse == NULL)
+		return (NULL);
+
+	return (browse);
 }
