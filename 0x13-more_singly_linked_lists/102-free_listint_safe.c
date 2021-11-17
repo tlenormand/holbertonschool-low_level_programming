@@ -13,7 +13,7 @@ size_t free_listint_safe(listint_t **h)
 
 	next_node = *h;
 
-	while (next_node->next)
+	while (next_node)
 	{
 		tmp = next_node;
 		next_node = next_node->next;
