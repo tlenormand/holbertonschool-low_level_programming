@@ -10,21 +10,18 @@
 
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *curr_node = head;
-	size_t number_of_nodes = 0, index = 0;
+	listint_t *search = head, *start = head;
 
-	while (curr_node)
+	while (search && search->next)
 	{
-		number_of_nodes++;
-		curr_node = curr_node->next;
-		index = number_of_nodes;
-		while (head != curr_node)
+		while (start != search && start != search->next)
 		{
-			head = head->next;
-			index--;
+			start = start->next;
 		}
-		if (index != 0)
-			return (curr_node);
+		if (start == search->next)
+			return (search->next);
+		start = head;
+		search = search->next;
 	}
 
 	return (NULL);
