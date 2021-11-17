@@ -2,23 +2,22 @@
 #include <stdio.h>
 
 /**
- * free_listint - function that frees a listint_t list
- * @head: list address
+ * free_listint_safe - function that frees a listint_t list
+ * @h: list address
+ * Return: number of node
  */
 
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *next_node = *h, *tmp;
+	listint_t *tmp;
 	int number_of_node = 0;
 
-	delete_loop(next_node);
-	next_node = *h;
+	delete_loop(*h);
 
-	while (next_node)
+	while (*h)
 	{
-		tmp = next_node;
-		next_node = next_node->next;
-		tmp->next = NULL;
+		tmp = (*h);
+		(*h) = (*h)->next;
 		free(tmp);
 		number_of_node++;
 	}
@@ -28,10 +27,16 @@ size_t free_listint_safe(listint_t **h)
 	return (number_of_node);
 }
 
+/**
+ * delete_loop - function that delete the value pointed by the looped node
+ * @head: list address
+ *
+ * Description: the next value pointed by the node is set to NULL
+ */
+
 void delete_loop(listint_t *head)
 {
-	listint_t *next_node = head;
-	listint_t *prev_node = head;
+	listint_t *next_node = head, *prev_node = head;
 	int index = 0;
 
 	while (next_node)
