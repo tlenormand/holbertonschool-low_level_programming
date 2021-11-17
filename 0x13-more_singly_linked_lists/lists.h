@@ -39,5 +39,6 @@ listint_t *find_listint_loop(listint_t *head);
 
 /*function creates in exercices*/
 int detect_loop(const listint_t *head, const listint_t *curr_node, int index);
+void delete_loop(listint_t *head);
 
 #endif /* LIST_H */

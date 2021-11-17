@@ -12,7 +12,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *curr_node = head;
-	int number_of_nodes = 0;
+	size_t number_of_nodes = 0;
 
 	while (curr_node)
 	{
