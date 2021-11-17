@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -12,16 +11,20 @@
 listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *curr_node = head;
-	size_t number_of_nodes = 0;
+	size_t number_of_nodes = 0, index = 0;
 
 	while (curr_node)
 	{
 		number_of_nodes++;
 		curr_node = curr_node->next;
-		if (detect_loop(head, curr_node, number_of_nodes) != 0)
+		index = number_of_nodes;
+		while (head != curr_node)
 		{
-			return (curr_node);
+			head = head->next;
+			index--;
 		}
+		if (index != 0)
+			return (curr_node);
 	}
 
 	return (NULL);
