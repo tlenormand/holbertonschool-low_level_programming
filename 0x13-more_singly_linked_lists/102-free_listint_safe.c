@@ -15,8 +15,8 @@ size_t free_listint_safe(listint_t **h)
 
 	while (*h)
 	{
-		tmp = (*h);
-		(*h) = (*h)->next;
+		tmp = *h;
+		*h = (*h)->next;
 		free(tmp);
 		number_of_node++;
 	}
