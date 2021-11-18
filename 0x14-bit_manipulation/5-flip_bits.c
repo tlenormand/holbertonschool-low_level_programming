@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * clear_bit - function that sets the value of a bit to 0 at a given index
- * @n: number to change the bit
- * @index: position of the bit to get
- * Return: 1 if success, 0 othewise
+ * flip_bits - function that calculate the difference of bit
+ * @n: number 1
+ * @m: number 2
+ * Return: number of different bits
  */
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
