@@ -9,17 +9,11 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int i, bin_idx = 1;
-	unsigned long int number = n;
+	if (n == 0)
+		return (0);
 
-	for (i = 0; number > 0; i++)
-	{
-		if (i == index)
-			return ((n & (1 << index)) >> index);
-		else if (((n & (1 << i)) >> i) == 1)
-			number -= bin_idx;
-		bin_idx *= 2;
-	}
+	if (index <= 32)
+		return ((n >> index) & 1);
 
 	return (-1);
 }
