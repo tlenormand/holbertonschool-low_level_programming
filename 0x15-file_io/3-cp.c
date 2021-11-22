@@ -12,9 +12,6 @@ int main(int argc, char **argv)
 	if (argc != 3)
 		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
 
-	if (argv[1] == NULL)
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
-
 	cp_content(argv[1], argv[2]);
 
 	return (0);
