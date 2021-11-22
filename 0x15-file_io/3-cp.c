@@ -2,20 +2,20 @@
 
 /**
  * main - function that copies the content of a file to another file
- * @ac: number of arguments
- * @av: arguments
+ * @argc: number of arguments
+ * @argv: arguments
  * Return: Always 0.
  */
 
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
-	if (ac != 3)
+	if (argc != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	cp_content(av[1], av[2]);
+	cp_content(argv[1], argv[2]);
 	return (0);
 }
 
@@ -28,8 +28,7 @@ int main(int ac, char **av)
 
 int cp_content(const char *file_from, const char *file_to)
 {
-	ssize_t read_return, close_return, write_return;
-	int fd_from, fd_to;
+	int fd_from, fd_to, read_return, write_return, close_return;
 	char buf[1024];
 
 	if (file_from == NULL)
