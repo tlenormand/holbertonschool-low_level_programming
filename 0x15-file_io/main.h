@@ -19,6 +19,7 @@ int append_text_to_file(const char *filename, char *text_content);
 
 /*function creates in exercices*/
 int cp_content(const char *file_from, const char *file_to);
+void _close(int fd);
 
 
 #endif /* MAIN_H */
