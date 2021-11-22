@@ -24,7 +24,10 @@ int create_file(const char *filename, char *text_content)
 
 	write_return = write(fd, text_content, _strlen(text_content));
 	if (write_return == -1)
+	{
+		close(fd);
 		return (-1);
+	}
 
 	close_return = close(fd);
 	if (close_return == -1)
