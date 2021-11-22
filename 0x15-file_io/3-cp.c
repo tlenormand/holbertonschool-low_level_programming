@@ -43,7 +43,7 @@ int cp_content(const char *file_from, const char *file_to)
 	if (buf == NULL)
 		dprintf(2, "Error: Can't write to %s\n", file_to), exit(99);
 
-	while ((read_return = read(fd_from, buf, 1024)) > 0)
+	while ((read_return = read(fd_from, buf, 1024)) != 0)
 	{
 		if (read_return == -1)
 			dprintf(2, "Error: Can't read from file %s\n", file_from), free(buf), exit(98);
