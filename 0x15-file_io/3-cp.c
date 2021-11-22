@@ -24,7 +24,7 @@ int main(int argc, char **argv)
  * cp_content - function that copies the content of a file to another file
  * @file_from: file to copy
  * @file_to: file to paste
- * Return: 1 if success, -1 if buf fail, exit if other issues
+ * Return: 0 if success, exit if other issues
  */
 
 int cp_content(const char *file_from, const char *file_to)
@@ -45,7 +45,7 @@ int cp_content(const char *file_from, const char *file_to)
 			dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
 		write_return = write(fd_to, buf, read_return);
 		if (write_return == -1)
-			dprintf(2, "Error: Can't close fd %s\n", file_to), exit(99);
+			dprintf(2, "Error: Can't write to %s\n", file_to), exit(99);
 	}
 
 	close_return = close(fd_from);
