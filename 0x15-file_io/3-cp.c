@@ -11,16 +11,13 @@
 
 int main(int ac, char **av)
 {
-	int res;
-
 	if (ac != 3)
 	{
 		printf("Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	res = cp_content(av[1], av[2]);
-	printf("-> %i)\n", res);
+	cp_content(av[1], av[2]);
 	return (0);
 }
 
@@ -47,11 +44,11 @@ int cp_content(const char *file_from, const char *file_to)
 
 	buf = malloc(1024);
 	if (buf == NULL)
-		free(buf), printf("buffer fail\n"), exit(95);
+		free(buf), exit(95);
 
 	read_return = read(fd, buf, 256);
 	if (read_return == -1)
-		free(buf), exit(98);
+		free(buf), printf("Error: Can't read from file %s\n", file_from), exit(98);
 
 	create_return = create_file(file_to, buf);
 	if (create_return == -1)
