@@ -35,23 +35,23 @@ int cp_content(const char *file_from, const char *file_to)
 	char buf[1024];
 
 	if (file_from == NULL)
-		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from), exit(98);
 
 	fd = open(file_from, O_RDONLY);
 	if (fd == -1)
-		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from), exit(98);
 
 	read_return = read(fd, buf, 256);
 	if (read_return == -1)
-		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from), exit(98);
 
 	create_return = create_file(file_to, buf);
 	if (create_return == -1)
-		dprintf(2, "Error: Can't write to %s\n", file_to), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
 
 	close_return = close(fd);
 	if (close_return == -1)
-		dprintf(2, "Error: Can't close fd %s\n", file_to), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", file_from), exit(100);
 
 	return (1);
 }
