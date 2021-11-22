@@ -57,7 +57,7 @@ int cp_content(const char *file_from, const char *file_to)
 	if (close_return == -1)
 		dprintf(2, "Error: Can't close fd %s\n", file_to), exit(100);
 
-	return (1);
+	return (0);
 }
 
 /**
