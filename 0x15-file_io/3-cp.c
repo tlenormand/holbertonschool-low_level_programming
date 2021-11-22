@@ -7,7 +7,7 @@
  * Return: 0 if success, exit if other issues
  */
 
-int cp_content(const char *file_from, const char *file_to)
+void cp_content(const char *file_from, const char *file_to)
 {
 	int fd_from, fd_to, read_return, write_return;
 	char *buf;
@@ -38,8 +38,6 @@ int cp_content(const char *file_from, const char *file_to)
 	free(buf);
 	_close(fd_from);
 	_close(fd_to);
-
-	return (0);
 }
 
 /**
