@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -30,28 +28,35 @@ int main(int ac, char **av)
 
 int cp_content(const char *file_from, const char *file_to)
 {
-	ssize_t read_return, create_return, close_return;
-	int fd;
+	ssize_t read_return, close_return, write_return;
+	int fd_from, fd_to;
 	char buf[1024];
 
 	if (file_from == NULL)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from), exit(98);
+		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
 
-	fd = open(file_from, O_RDONLY);
-	if (fd == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from), exit(98);
+	fd_from = open(file_from, O_RDONLY);
+	if (fd_from == -1)
+		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
+	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (fd_to == -1)
+		dprintf(2, "Error: Can't read from file %s\n", file_to), exit(98);
 
-	read_return = read(fd, buf, 256);
-	if (read_return == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from), exit(98);
+	while ((read_return = read(fd_from, buf, 1024)) != 0)
+	{
+		if (read_return == -1)
+			dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
+		write_return = write(fd_to, buf, read_return);
+		if (write_return == -1)
+			dprintf(2, "Error: Can't close fd %s\n", file_to), exit(100);
+	}
 
-	create_return = create_file(file_to, buf);
-	if (create_return == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
-
-	close_return = close(fd);
+	close_return = close(fd_from);
 	if (close_return == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", file_from), exit(100);
+		dprintf(2, "Error: Can't close fd %s\n", file_from), exit(100);
+	close_return = close(fd_to);
+	if (close_return == -1)
+		dprintf(2, "Error: Can't close fd %s\n", file_to), exit(100);
 
 	return (1);
 }
@@ -71,40 +76,4 @@ int i = 0;
 		s++, i++;
 
 	return (i);
-}
-
-/**
- * create_file - Create a function that creates a file
- * @filename: file to create
- * @text_content: text to add in the file
- * Return: 1 if success, -1 if fail
- */
-
-int create_file(const char *filename, char *text_content)
-{
-	int fd, new, write_return, close_return;
-
-	if (filename == NULL)
-		return (-1);
-
-	new = creat(filename, 0664);
-	if (new == -1)
-		return (-1);
-
-	fd = open(filename, O_WRONLY);
-	if (fd == -1)
-		return (-1);
-
-	write_return = write(fd, text_content, _strlen(text_content));
-	if (write_return == -1)
-		return (-1);
-
-	close_return = close(fd);
-	if (close_return == -1)
-	{
-		printf("Error: Can't close fd %s\n", filename);
-		exit(100);
-	}
-
-	return (1);
 }
