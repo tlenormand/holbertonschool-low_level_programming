@@ -32,31 +32,26 @@ int cp_content(const char *file_from, const char *file_to)
 {
 	ssize_t read_return, create_return, close_return;
 	int fd;
-	char *buf = NULL;
+	char buf[1024];
 
 	if (file_from == NULL)
-		printf("Error: Can't read from file %s\n", file_from), exit(98);
+		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
 
 	fd = open(file_from, O_RDONLY);
-
 	if (fd == -1)
-		printf("Error: Can't read from file %s\n", file_from), exit(98);
-
-	buf = malloc(1024);
-	if (buf == NULL)
-		free(buf), exit(95);
+		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
 
 	read_return = read(fd, buf, 256);
 	if (read_return == -1)
-		free(buf), printf("Error: Can't read from file %s\n", file_from), exit(98);
+		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
 
 	create_return = create_file(file_to, buf);
 	if (create_return == -1)
-		free(buf), printf("Error: Can't write to %s\n", file_to), exit(99);
+		dprintf(2, "Error: Can't write to %s\n", file_to), exit(99);
 
 	close_return = close(fd);
 	if (close_return == -1)
-		free(buf), printf("Error: Can't close fd %s\n", file_to), exit(100);
+		dprintf(2, "Error: Can't close fd %s\n", file_to), exit(100);
 
 	return (1);
 }
