@@ -51,6 +51,8 @@ int cp_content(const char *file_from, const char *file_to)
 		if (write_return == -1)
 			dprintf(2, "Error: Can't write to %s\n", file_to), free(buf), exit(99);
 	}
+	if (read_return == -1)
+			dprintf(2, "Error: Can't read from file %s\n", file_from), free(buf), exit(98);
 
 	close_return = close(fd_from);
 	if (close_return == -1)
