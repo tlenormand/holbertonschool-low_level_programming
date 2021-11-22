@@ -32,7 +32,7 @@ void cp_content(const char *file_from, const char *file_to)
 		}
 		write_return = write(fd_to, buf, read_return);
 		if (write_return == -1)
-			dprintf(STDERR_FILENO2, "Error: Can't write to %s\n", file_to), free(buf), exit(99);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), free(buf), exit(99);
 	}
 
 	free(buf);
