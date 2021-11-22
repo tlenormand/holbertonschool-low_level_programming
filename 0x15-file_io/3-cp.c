@@ -47,7 +47,7 @@ int cp_content(const char *file_from, const char *file_to)
 			dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
 		write_return = write(fd_to, buf, read_return);
 		if (write_return == -1)
-			dprintf(2, "Error: Can't close fd %s\n", file_to), exit(100);
+			dprintf(2, "Error: Can't close fd %s\n", file_to), exit(99);
 	}
 
 	close_return = close(fd_from);
