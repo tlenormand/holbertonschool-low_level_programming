@@ -46,7 +46,21 @@ hash_node_t *add_node(hash_node_t *array, const char *key, const char *value)
 		return (NULL);
 
 	new->key = strdup(key);
+	if (new->key == NULL)
+	{
+		free(new->key);
+		free(new);
+		return (NULL);
+	}
 	new->value = strdup(value);
+	if (new->value == NULL)
+	{
+		free(new->key);
+		free(new->value);
+		free(new);
+		return (NULL);
+	}
+
 	new->next = array;
 	array = new;
 
