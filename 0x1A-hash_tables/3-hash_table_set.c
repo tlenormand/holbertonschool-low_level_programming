@@ -12,12 +12,27 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	hash_node_t *head;
 	unsigned long int index;
 
 	if (!key || !value || !ht || !ht->array || !ht->size || strcmp(key, "") == 0)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
+
+	head = ht->array[index];
+	while (head)
+	{
+		if (strcmp(head->key, key) == 0)
+		{
+			free(head->value);
+			head->value = strdup(value);
+			if (head->value == NULL)
+				return (0);
+			return (1);
+		}
+		head = head->next;
+	}
 
 	ht->array[index] = add_node(ht->array[index], key, value);
 	if (!ht->array[index])
