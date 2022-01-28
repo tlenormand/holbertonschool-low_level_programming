@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 
 	ht->array[index] = add_node(ht->array[index], key, value);
-	if (ht->array[index] == NULL)
+	if (!ht->array[index])
 		return (0);
 
 	return (1);
@@ -46,21 +46,7 @@ hash_node_t *add_node(hash_node_t *array, const char *key, const char *value)
 		return (NULL);
 
 	new->key = strdup(key);
-	if (new->key == NULL)
-	{
-		free(new->key);
-		free(new);
-		return (NULL);
-	}
 	new->value = strdup(value);
-	if (new->value == NULL)
-	{
-		free(new->key);
-		free(new->value);
-		free(new);
-		return (NULL);
-	}
-
 	new->next = array;
 	array = new;
 
