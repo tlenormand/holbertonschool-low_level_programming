@@ -14,15 +14,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = key_index((const unsigned char *)key, ht->size);
 
-	if (!key)
+	if (!key || !value || !ht || !ht->array || !ht->size)
 		return (0);
-
-	if (!ht->array)
-	{
-		ht->array = malloc(sizeof(hash_node_t *) * ht->size);
-		if (ht->array == NULL)
-			return (0);
-	}
 
 	ht->array[index] = add_node(ht->array[index], key, value);
 
