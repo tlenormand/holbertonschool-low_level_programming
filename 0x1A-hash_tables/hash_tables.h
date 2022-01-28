@@ -41,7 +41,7 @@ typedef struct hash_table_s
 
 /*============================================================*/
 /*functions created before*/
-hash_node_t *add_node(hash_node_t **array, const char *key, const char *value);
+hash_node_t *add_node(hash_node_t *array, const char *key, const char *value);
 void free_list(hash_node_t *head);
 
 /*============================================================*/
