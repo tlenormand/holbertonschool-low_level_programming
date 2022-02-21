@@ -1,7 +1,3 @@
-a.out
-c
-cisfun
-main.o
-main.s
-size32
-size64
+*
+!README.md
+!*.c
