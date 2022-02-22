@@ -10,7 +10,6 @@
 
 int main(int argc, char *argv[])
 {
-
 	int money, i = 0, rest = 0, cpt_coin = 0;
 	int coin[5] = {25, 10, 5, 2, 1};
 

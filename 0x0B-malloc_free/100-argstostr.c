@@ -16,12 +16,12 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-/*count the length "len" of the array "list"*/
+	/* count the length "len" of the array "list" */
 	for (i = 0; i < ac; i++, len++)
 		for (j = 0; av[i][j]; j++, len++)
 			;
 
-/*assign the size "len" of the array "list"*/
+	/* assign the size "len" of the array "list" */
 	list = (char *)malloc((sizeof(char) * len + 1));
 	if (list == NULL)
 	{
@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 
-/*fill the array "list"*/
+	/* fill the array "list" */
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j]; j++)
@@ -37,6 +37,7 @@ char *argstostr(int ac, char **av)
 			list[k] = av[i][j];
 			k++;
 		}
+
 		list[k] = '\n';
 		k++;
 	}

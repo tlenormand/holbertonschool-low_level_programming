@@ -21,9 +21,7 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 
 	for (i = 0; i < strlen_s1; i++)
-	{
 		*(list + i) = *(s1 + i);
-	}
 
 	for (i = 0; i < strlen_s2; i++)
 		*(list + strlen_s1 + i) = *(s2 + i);
@@ -40,8 +38,7 @@ char *str_concat(char *s1, char *s2)
 
 int _strlen(char *s)
 {
-
-int i = 0;
+	int i = 0;
 
 	while (*s != 0)
 		s++, i++;
