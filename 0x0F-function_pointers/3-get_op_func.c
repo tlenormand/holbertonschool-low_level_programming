@@ -2,7 +2,9 @@
 
 /**
  * get_op_func - get the operator of the calculation
+ *
  * @s: operator income to compare
+ *
  * Return: function associate to the operator
  */
 

@@ -3,7 +3,10 @@
 
 /**
  * print_dog - function that prints a struct dog
+ *
  * @d: pointer to the struct dog
+ *
+ * Return : None
  */
 
 void print_dog(struct dog *d)

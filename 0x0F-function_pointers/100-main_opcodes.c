@@ -3,8 +3,10 @@
 
 /**
  * main - program that prints the opcodes of its own main function
+ *
  * @argc: number of arguments
  * @argv: value of arguments
+ *
  * Return: 0 if ok, exit 1 or 2 if error
  */
 
@@ -18,6 +20,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(1);
 	}
+
 	if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
@@ -32,7 +35,7 @@ int main(int argc, char **argv)
 			printf(" ");
 		printf("%02x", *(unsigned char *)(p + i));
 	}
-	printf("\n");
 
+	printf("\n");
 	return (0);
 }

@@ -13,11 +13,11 @@ int main(int ac, char *av[])
 
     s = argstostr(ac, av);
     if (s == NULL)
-    {
         return (1);
-    }
+
     printf("%s", s);
     free(s);
+
     return (0);
 }
 

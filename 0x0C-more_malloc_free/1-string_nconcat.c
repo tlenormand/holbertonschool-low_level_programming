@@ -3,9 +3,11 @@
 
 /**
  * string_nconcat - function that concatenates two strings
+ *
  * @s1: string 1
  * @s2: string 2
  * @n: first n bytes of s2
+ *
  * Return: string concatenate or NULL if malloc failled
  */
 
@@ -39,14 +41,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 /**
  * _strlen - function that returns the length of a string
+ *
  * @s: string to returns the length
+ *
  * Return: Return the length of the string
  */
 
 int _strlen(char *s)
 {
-
-int i = 0;
+	int i = 0;
 
 	while (*s != 0)
 		s++, i++;

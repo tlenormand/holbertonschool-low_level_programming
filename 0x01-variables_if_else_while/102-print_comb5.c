@@ -21,22 +21,19 @@ int main(void)
 			putchar(32);
 			putchar((num2 / 10) + '0');
 			putchar((num2 % 10) + '0');
-			if (num1 == 98 && num2 == 99)
-			{
-
-			}
-			else
+			if (num1 != 98 && num2 != 99)
 			{
 				putchar(44);
 				putchar(32);
 			}
+
 		num2++;
 		}
+
 	num2 = num1 + 2;
 	num1++;
 	}
 
 	putchar('\n');
-
 	return (0);
 }

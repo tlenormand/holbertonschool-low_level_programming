@@ -8,23 +8,19 @@
 
 int main(void)
 {
+	int i = 97;
 
-int i = 97;
-
-while (i < 123)
-{
-	if (i == 113 || i == 101)
+	while (i < 123)
 	{
-		i++;
+		if (i == 113 || i == 101)
+			i++;
+		else
+		{
+			putchar(i);
+			i++;
+		}
 	}
-	else
-	{
-		putchar(i);
-		i++;
-	}
-}
 
-putchar('\n');
-
-return (0);
+	putchar('\n');
+	return (0);
 }

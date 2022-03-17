@@ -3,9 +3,11 @@
 
 /**
  * _realloc - function that reallocates a memory block
+ *
  * @ptr: old array
  * @old_size: size of the old array
  * @new_size: size of the new array
+ *
  * Return: the new array
  */
 
@@ -42,15 +44,16 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 /**
  * _memcpy - function that copies memory area
+ *
  * @dest: memory area dest
  * @src: memory area src
  * @n: copies n bytes from memory area
+ *
  * Return: a pointer to destination (dest)
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-
 	while (n != 0)
 	{
 		dest[n - 1] = src[n - 1];

@@ -8,35 +8,33 @@
 
 int main(void)
 {
+	int i = 48;
+	int c = 48;
+	int cpt = 0;
 
-int i = 48;
-int c = 48;
-int cpt = 0;
-
-while (i < 58)
-{
-	while (c < 58)
+	while (i < 58)
 	{
-		if (c != i)
+		while (c < 58)
 		{
-			putchar(i);
-			putchar(c);
-			if (i < 56)
+			if (c != i)
 			{
-				putchar(44);
-				putchar(32);
+				putchar(i);
+				putchar(c);
+				if (i < 56)
+				{
+					putchar(44);
+					putchar(32);
+				}
+				c++;
 			}
-			c++;
+			else
+				c++;
 		}
-		else
-			c++;
+		cpt = cpt + 1;
+		c = 48 + cpt;
+		i++;
 	}
-	cpt = cpt + 1;
-	c = 48 + cpt;
-	i++;
-}
 
-putchar('\n');
-
-return (0);
+	putchar('\n');
+	return (0);
 }

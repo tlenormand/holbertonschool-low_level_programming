@@ -3,7 +3,9 @@
 
 /**
  * malloc_checked - function that allocates memory using malloc
+ *
  * @b: length of the memory to allocate
+ *
  * Return: memory allocated, 98 if NULL
  */
 

@@ -3,8 +3,10 @@
 
 /**
  * array_range - function that creates an array of integers
+ *
  * @min: min number to begin
  * @max: max number to stop
+ *
  * Return: array or NULL if fail
  */
 
