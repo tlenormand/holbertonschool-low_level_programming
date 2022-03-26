@@ -36,9 +36,10 @@ void print_all(const char * const format, ...)
 		}
 		index1++;
 		index2 = 0;
-
 	}
+
 	va_end(args);
+
 	printf("\n");
 }
 
@@ -90,5 +91,6 @@ void print_char_pointer(va_list args)
 		printf("(nil)");
 		return;
 	}
+
 	printf("%s", str);
 }

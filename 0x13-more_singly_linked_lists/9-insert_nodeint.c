@@ -38,6 +38,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		loop++;
 		if (loop < idx)
 			prev_node = next_node;
+
 		if (prev_node == NULL)
 		{
 			free(new_node);

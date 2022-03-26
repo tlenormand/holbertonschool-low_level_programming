@@ -15,6 +15,7 @@ int _sqrt_recursion(int n)
 		iteration = sqr(n, iteration);
 		return (iteration);
 	}
+
 	return (-1);
 }
 
@@ -37,5 +38,6 @@ int sqr(int n, int iteration)
 	}
 	else if (iteration == n && iteration != 1)
 		return (-1);
+
 	return (iteration);
 }

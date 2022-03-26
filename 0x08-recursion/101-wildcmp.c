@@ -32,10 +32,7 @@ int compare(char *s1, char *s2, int i, int j, int istar)
 	if (s1[i] != '\0')
 	{
 		if (s2[j - 1] == '*' && s1[i - 1] == s1[i])
-		{
 			return (compare(s1, s2, i + 1, j, istar));
-		}
-
 		else if (s1[i] == s2[j])
 		{
 			istar = 0;
@@ -46,7 +43,6 @@ int compare(char *s1, char *s2, int i, int j, int istar)
 			istar = 1;
 			return (compare(s1, s2, i + 1, j + 1, istar));
 		}
-
 		else if (s2[j] == '*')
 		{
 			istar = 1;
@@ -63,6 +59,7 @@ int compare(char *s1, char *s2, int i, int j, int istar)
 		return (0);
 	else if (s1[i] == '\0')
 		return (1);
+
 	return (0);
 }
 
@@ -82,6 +79,6 @@ int star(char *s1, char *s2, int i, int j)
 		return (star(s1, s2, i + 1, j + 1));
 	else if (s2[j] == '*')
 		return (star(s1, s2, i, j + 1));
-	else
-		return (j);
+
+	return (j);
 }

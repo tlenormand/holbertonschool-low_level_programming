@@ -27,6 +27,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		old_list = *head;
 		while (old_list->next != NULL)
 			old_list = old_list->next;
+
 		old_list->next = new_list;
 	}
 
@@ -44,9 +45,7 @@ int _strlen(const char *s)
 	int i;
 
 	for (i = 0 ; s[i] != '\0'; i++)
-	{
 		;
-	}
 
 	return (i);
 }
