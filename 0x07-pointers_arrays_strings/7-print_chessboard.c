@@ -2,12 +2,14 @@
 
 /**
  * print_chessboard - function that prints the chessboard
+ *
  * @a: chessboard
+ *
+ * Return: None
  */
 
 void print_chessboard(char (*a)[8])
 {
-
 	int i, j;
 
 	for (i = 0; a[i] && i < 8; i++)
@@ -17,5 +19,4 @@ void print_chessboard(char (*a)[8])
 			if (j == 7)
 				_putchar('\n');
 		}
-
 }

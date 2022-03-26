@@ -3,37 +3,37 @@
 
 /**
  * print_triangle - function that prints a triangle
+ *
  * @size: size of the triangle
+ *
+ * Return: None
  */
 
 void print_triangle(int size)
 {
+	int j, i = 1;
 
-int i = 1;
-int j;
-
-if (size > 0)
-{
-	while (i <= size)
+	if (size > 0)
 	{
-		j = 1;
-		while (j <= size - i)
+		while (i <= size)
 		{
-			_putchar(' ');
-			j++;
-		}
-		while (j <= size)
-		{
-			_putchar('#');
-			j++;
-		}
-		_putchar('\n');
-		i++;
-	}
-}
-else
-{
-	_putchar('\n');
-}
+			j = 1;
+			while (j <= size - i)
+			{
+				_putchar(' ');
+				j++;
+			}
 
+			while (j <= size)
+			{
+				_putchar('#');
+				j++;
+			}
+
+			_putchar('\n');
+			i++;
+		}
+	}
+	else
+		_putchar('\n');
 }

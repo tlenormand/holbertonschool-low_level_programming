@@ -3,13 +3,15 @@
 
 /**
  * print_array - function that prints n elements of an array of integers
+ *
  * @a: array
  * @n: number of elements of the array to be printed
+ *
+ * Return: None
  */
 
 void print_array(int *a, int n)
 {
-
 	int i;
 
 	for (i = 0; i < n; i++)
@@ -17,6 +19,6 @@ void print_array(int *a, int n)
 			printf("%d, ", a[i]);
 		else
 			printf("%d", a[i]);
-	printf("\n");
 
+	printf("\n");
 }

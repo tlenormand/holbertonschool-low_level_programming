@@ -2,7 +2,9 @@
 
 /**
  * string_toupper - function that changes all lowercase letters to uppercase
+ *
  * @string_up: string to up
+ *
  * Return: string in uppercase
  */
 

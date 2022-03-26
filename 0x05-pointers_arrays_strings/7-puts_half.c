@@ -2,12 +2,14 @@
 
 /**
  * puts_half - function that prints half of a string
+ *
  * @str: string to print
+ *
+ * Return: None
  */
 
 void puts_half(char *str)
 {
-
 	int i, j;
 
 	for (i = 0; str[i] != '\0'; i++)
@@ -20,5 +22,4 @@ void puts_half(char *str)
 		_putchar(str[j]);
 
 	_putchar('\n');
-
 }

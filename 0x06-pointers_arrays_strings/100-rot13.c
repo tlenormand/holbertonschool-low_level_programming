@@ -2,13 +2,14 @@
 
 /**
  * rot13 - function that encodes a string into ROT13
+ *
  * @code: string to encode
+ *
  * Return: code encoded
  */
 
 char *rot13(char *code)
 {
-
 	char caractere[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char encoding[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int index1 = 0, index2 = 0;

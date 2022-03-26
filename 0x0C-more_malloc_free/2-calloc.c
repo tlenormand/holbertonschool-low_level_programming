@@ -3,8 +3,10 @@
 
 /**
  * _calloc - function that allocates memory for an array, using malloc
+ *
  * @nmemb: array of nmemb elements
  * @size: size bytes
+ *
  * Return: the list created of NULL if fail
  */
 

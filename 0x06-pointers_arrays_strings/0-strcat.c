@@ -2,15 +2,16 @@
 
 /**
  * _strcat - function that concatenates two strings
+ *
  * @dest: destination to concatenate
  * @src: string to concatenate
+ *
  * Return: the result concatenate
  */
 
 char *_strcat(char *dest, char *src)
 {
-
-int j, strlen = 0;
+	int j, strlen = 0;
 
 	while (dest[strlen] != '\0')
 		strlen++;

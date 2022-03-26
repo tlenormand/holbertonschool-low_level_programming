@@ -3,8 +3,11 @@
 
 /**
  * print_buffer - function that prints a buffer
+ *
  * @b: string
  * @size: size of the string
+ *
+ * Return: None
  */
 
 void print_buffer(char *b, int size)
@@ -18,14 +21,15 @@ void print_buffer(char *b, int size)
 			printf("%08x: ", i);
 			printf("%02x", b[i]);
 		}
-		i++;
 
+		i++;
 		while (i % 10 != 0 && i < size)
 		{
 			if (i % 2 != 0)
 				printf("%02x ", b[i]);
 			else
 				printf("%02x", b[i]);
+
 			i++;
 		}
 
@@ -39,6 +43,7 @@ void print_buffer(char *b, int size)
 			else
 				printf(".");
 		}
+
 		printf("\n");
 	}
 }
@@ -46,8 +51,11 @@ void print_buffer(char *b, int size)
 
 /**
  * print_last_line - function that print last line of the buffer
+ *
  * @b: string
  * @i: previous index stopped
+ *
+ * Return: None
  */
 
 void print_last_line(char *b, int i)
@@ -58,8 +66,10 @@ void print_last_line(char *b, int i)
 	{
 		if (j % 2 == 0)
 			printf(" ");
+
 		printf("  ");
 	}
+
 	for (j = i - i % 10; j < i; j++)
 	{
 		if (b[j] > 10)

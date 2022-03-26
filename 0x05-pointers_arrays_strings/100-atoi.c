@@ -3,16 +3,16 @@
 
 /**
  * _atoi - function that convert a string to an integer
+ *
  * @s: string to convert
+ *
  * Return: the number converted
  */
 
 int _atoi(char *s)
 {
-
-	int i;
+	int i, sign_of_number = 1;
 	unsigned int total = 0;
-	int sign_of_number = 1;
 
 	for (i = 0; s[i] != '\0' && ((s[i] < 48 || s[i] > 57)); i++)
 		if (s[i] == '-')

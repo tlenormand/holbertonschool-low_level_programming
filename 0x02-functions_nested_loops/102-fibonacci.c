@@ -8,23 +8,20 @@
 
 int main(void)
 {
+	long int fib1 = 0, fib2 = 1, c = 1;
+	int i = 0;
 
-int i = 0;
-long int fib1 = 0;
-long int fib2 = 1;
-long int c = 1;
+	while (i < 50)
+	{
+		c = fib1 + fib2;
+		fib1 = fib2;
+		fib2 = c;
+		printf("%ld", c);
+		i++;
+		if (i != 50)
+			printf(", ");
+	}
 
-while (i < 50)
-{
-	c = fib1 + fib2;
-	fib1 = fib2;
-	fib2 = c;
-	printf("%ld", c);
-	i++;
-	if (i != 50)
-		printf(", ");
-}
-printf("\n");
-
+	printf("\n");
 	return (0);
 }

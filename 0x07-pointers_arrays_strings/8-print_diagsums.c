@@ -3,13 +3,15 @@
 
 /**
  * print_diagsums - prints the sum of the two diagonals of a matrix of integers
+ *
  * @a: matrix
  * @size: size of the matrix
+ *
+ * Return: None
  */
 
 void print_diagsums(int *a, int size)
 {
-
 	int i;
 	unsigned int sum1, sum2;
 

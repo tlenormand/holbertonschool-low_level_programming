@@ -9,7 +9,6 @@
  * Return: 0 always
  */
 
-
 int main(void)
 {
 	int total = 2772;
@@ -22,7 +21,7 @@ int main(void)
 		printf("%c", password);
 		total -= password;
 	}
-	printf("%c", total);
 
+	printf("%c", total);
 	return(0);
 }

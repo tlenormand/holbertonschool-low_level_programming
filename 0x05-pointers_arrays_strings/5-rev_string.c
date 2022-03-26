@@ -3,12 +3,14 @@
 
 /**
  * rev_string - function that reverses a string
+ *
  * @s: string to reverse
+ *
+ * Return: None
  */
 
 void rev_string(char *s)
 {
-
 	int temp, length;
 	int left = 0;
 
@@ -18,18 +20,18 @@ void rev_string(char *s)
 		s[left] = s[length];
 		s[length] = temp;
 	}
-
 }
 
 /**
  * _strlen - function that returns the length of a string
+ *
  * @s: string to returns the length
+ *
  * Return: Return the length of the string
  */
 
 int _strlen(char *s)
 {
-
 	int strlen = 0;
 
 	while (s[strlen] != '\0')

@@ -2,7 +2,9 @@
 
 /**
  * cap_string - function that capitalizes all words of a string
+ *
  * @string_cap: string to capitalize
+ *
  * Return: string capitalized
  */
 

@@ -9,9 +9,7 @@
 
 int main(void)
 {
-
-	long int number;
-	long int i = 0;
+	long int number, i = 0;
 	int factor = 2;
 
 	number = 612852475143;
@@ -22,9 +20,10 @@ int main(void)
 			i = factor;
 			number = number / factor;
 		}
+
 		factor++;
 	}
-	printf("%ld\n", i);
 
+	printf("%ld\n", i);
 	return (0);
 }

@@ -1,52 +1,51 @@
-Functions, nested loops
+# 0x02. C - Functions, nested loops
 
-0. _putchar
-Write a program that prints _putchar, followed by a new line.
+<p><strong>Read or watch</strong>:</p>
 
-1. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
-Write a function that prints the alphabet, in lowercase, followed by a new line.
+<ul>
+<li><a href="/rltoken/L0Vf5XJdD7ylLOyQnzVY6Q" title="Nested while loops" target="_blank">Nested while loops</a> </li>
+<li><a href="/rltoken/pU9KLKlz0W2ZSSlzJsYA7w" title="C - Functions" target="_blank">C - Functions</a> </li>
+<li><a href="/rltoken/pu-exPylodWaQjU7f6KhYQ" title="Learning to Program in C (Part 06)" target="_blank">Learning to Program in C (Part 06)</a> (<em>stop at 14:00</em>)</li>
+<li><a href="/rltoken/bANgUAj_-F9_85yHxzSD6w" title="What is the purpose of a function prototype?" target="_blank">What is the purpose of a function prototype?</a> </li>
+<li><a href="/rltoken/xC6XfUoznEIJgfdP52GUIw" title="C - Header Files" target="_blank">C - Header Files</a> (<em>stop before the &ldquo;Once-Only Headers&rdquo; paragraph</em>)</li>
+</ul>
 
-2. 10 x alphabet
-Write a function that prints 10 times the alphabet, in lowercase, followed by a new line.
+<h2>Learning Objectives</h2>
 
-3. islower
-Write a function that checks for lowercase character.
+<p>At the end of this project, you are expected to be able to <a href="/rltoken/kk-N0deGCGSwdlvk-U_4XA" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
 
-4. isalpha
-Write a function that checks for alphabetic character.
+<h3>General</h3>
 
-5. Sign
-Write a function that prints the sign of a number.
+<ul>
+<li>What are nested loops and how to use them</li>
+<li>What is a function and how do you use functions</li>
+<li>What is the difference between a declaration and a definition of a function</li>
+<li>What is a prototype</li>
+<li>Scope of variables</li>
+<li>What are the <code>gcc</code> flags <code>-Wall -Werror -pedantic -Wextra -std=gnu89</code></li>
+<li>What are header files and how to to use them with <code>#include</code></li>
+</ul>
 
-6. There is no such thing as absolute value in this world. You can only estimate what a thing is worth to you
-Write a function that computes the absolute value of an integer.
+<h2>Requirements</h2>
 
-7. There are only 3 colors, 10 digits, and 7 notes; it's what we do with them that's important
-Write a function that prints the last digit of a number.
+<h3>General</h3>
 
-8. I'm federal agent Jack Bauer, and today is the longest day of my life
-Write a function that prints every minute of the day of Jack Bauer, starting from 00:00 to 23:59.
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your files will be compiled on Ubuntu 20.04 LTS using <code>gcc</code>, using the options <code>-Wall -Werror -Wextra -pedantic -std=gnu89</code></li>
+<li>All your files should end with a new line</li>
+<li>A <code>README.md</code> file, at the root of the folder of the project is mandatory</li>
+<li>Your code should use the <code>Betty</code> style. It will be checked using <a href="https://github.com/holbertonschool/Betty/blob/master/betty-style.pl" title="betty-style.pl" target="_blank">betty-style.pl</a> and <a href="https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl" title="betty-doc.pl" target="_blank">betty-doc.pl</a></li>
+<li>You are not allowed to use global variables</li>
+<li>No more than 5 functions per file</li>
+<li>You are not allowed to use the standard library. Any use of functions like <code>printf</code>, <code>puts</code>, etc&hellip; is forbidden</li>
+<li>You are allowed to use <a href="https://github.com/holbertonschool/_putchar.c/blob/master/_putchar.c" title="_putchar" target="_blank">_putchar</a></li>
+<li>You don&rsquo;t have to push <code>_putchar.c</code>, we will use our file. If you do it won&rsquo;t be taken into account</li>
+<li>In the following examples, the <code>main.c</code> files are shown as examples. You can use them to test your functions, but you don&rsquo;t have to push them to your repo (if you do we won&rsquo;t take them into account). We will use our own <code>main.c</code> files at compilation. Our <code>main.c</code> files might be different from the one shown in the examples</li>
+<li>The prototypes of all your functions and the prototype of the function <code>_putchar</code> should be included in your header file called <code>main.h</code></li>
+<li>Don&rsquo;t forget to push your header file</li>
+</ul>
 
-9. Learn your times table
-Write a function that prints the 9 times table, starting with 0.
+<h2>More Info</h2>
 
-10. a + b
-Write a function that adds two integers and returns the result.
-
-11. 98 Battery Street, the OG
-Write a function that prints all natural numbers from n to 98, followed by a new line.
-
-12. The World looks like a multiplication-table, or a mathematical equation, which, turn it how you will, balances itself
-Write a function that prints the n times table, starting with 0.
-
-13. Nature made the natural numbers; All else is the work of women
-If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Write a program that computes and prints the sum of all the multiples of 3 or 5 below 1024 (excluded), followed by a new line.
-
-14. In computer class, the first assignment was to write a program to print the first 100 Fibonacci numbers. Instead, I wrote a program that would steal passwords of students. My teacher gave me an A
-Write a program that prints the first 50 Fibonacci numbers, starting with 1 and 2, followed by a new line.
-
-15. Even Liber Abbaci
-Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89. By considering the terms in the Fibonacci sequence whose values do not exceed 4,000,000, write a program that finds and prints the sum of the even-valued terms, followed by a new line.
-
-16. In computer class, the first assignment was to write a program to print the first 100 Fibonacci numbers. Instead, I wrote a program that would steal passwords of students. My teacher gave me an A+
-Write a program that finds and prints the first 98 Fibonacci numbers, starting with 1 and 2, followed by a new line.
+<p>You do not have to understand the call by reference (address), stack, static variables, recursions or arrays, yet.</p>

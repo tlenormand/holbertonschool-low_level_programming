@@ -2,17 +2,19 @@
 
 /**
  * print_alphabet -  prints the alphabet in lowercase
+ *
+ * Return: None
  */
 
 void print_alphabet(void)
 {
+	int i = 0;
 
-int i = 0;
+	while (i < 26)
+	{
+		_putchar(i + 97);
+		i++;
+	}
 
-while (i < 26)
-{
-	_putchar(i + 97);
-	i++;
-}
-_putchar('\n');
+	_putchar('\n');
 }
