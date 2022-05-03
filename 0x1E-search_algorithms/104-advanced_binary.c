@@ -15,35 +15,44 @@
 
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t i = 0;
-	size_t left = 0;
-	size_t right = size - 1;
-	size_t mid;
-
 	if (size == 0)
 		return (-1);
 
-	while (right >= left)
-	{
-		mid = left + (right - left) / 2;
+	return advanced_binary_search(array, 0, size - 1, value);
+}
 
-		/* print the array */
-		printf("Searching in array: ");
-		for (i = left; i < right; i++)
-			printf("%d, ", array[i]);
-		printf("%d\n", array[i]);
 
-		if (array[mid - 1] == value)
-			return (advanced_binary(array, mid + 1, value));
+/**
+ * advanced_binary_search - function that searches for a value
+ * in a sorted array of integers recursively
+ *
+ * @array: pointer to the first element of the array to search in
+ * @left: left position of the array
+ * @right: right position of the array
+ * @value: value to search for
+ *
+ * Return:
+ *	first index where value is located
+ *	-1 otherwise
+ */
 
-		if (array[mid] == value)
-			return (mid);
+int advanced_binary_search(int *array, size_t left, size_t right, int value)
+{
+	size_t mid = left + (right - left) / 2;
+	size_t i = 0;
 
-		if (array[mid] > value)
-			right = mid;
-		else
-			left = mid + 1;
-	}
+	/* print the array */
+	printf("Searching in array: ");
+	for (i = 0; i < right - left; i++)
+		printf("%d, ", array[i + left]);
+	printf("%d\n", array[i + left]);
 
-	return (-1);
+	if (array[mid] == value && array[mid - 1] != value)
+		return (mid);
+	else if (right - left == 0)
+		return (-1);
+	else if (array[mid] >= value)
+		return (advanced_binary_search(array, left, mid, value));
+
+	return (advanced_binary_search(array, mid + 1, right, value));
 }
