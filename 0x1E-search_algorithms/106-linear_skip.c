@@ -1,11 +1,10 @@
 #include "search_algos.h"
 
 /**
- * jump_list - function that searches for a value in a sorted list of integers
- * using the Jump search algorithm
+ * linear_skip - function that searches for a value in a sorted list of
+ * integers using the Jump search algorithm
  *
  * @list: pointer to the head of the skip list to search in
- * @size: number of elements in array
  * @value: value to search for
  *
  * Return:
@@ -34,7 +33,8 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			list = list->next;
 	}
 
-	printf("Value found between indexes [%ld] and [%ld]\n", prev->index, list->index);
+	printf("Value found between indexes [%ld] and [%ld]\n",
+		   prev->index, list->index);
 
 	while (prev && prev->n <= value)
 	{
