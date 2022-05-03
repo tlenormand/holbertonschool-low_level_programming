@@ -37,7 +37,7 @@ int advanced_binary(int *array, size_t size, int value)
 			return (mid);
 
 		if (array[mid] > value)
-			right = mid - 1;
+			right = mid;
 		else
 			left = mid + 1;
 	}
